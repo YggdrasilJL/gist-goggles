@@ -63,14 +63,34 @@ Here is a list of quantifiers:
 
     {n, m}:
 
-> Matches between n and m occurrences.
+> Matches between n and m occurrences, {8,} is used in the regex [above](#regex) (matches 8 or more occurrences).
 
 
 ### OR Operator
 
+The OR operator '|' is used to check if one of the conditions is met, very similar to the OR operator in JavaScript.
+
+#### For example: 
+In the regex above, it is used to match special characters, Shown here:
+```
+[\!@#$%^&*()\\[\]{}\-_+=~`|:;"'<>,./?]
+```
+
 ### Character Classes
 
+Character classes are used to check if a character matches a specific set of characters. In the regex above, it is used to matches any uppercase letter <span style="color: lightgreen;">[A-Z]</span>, lowercase letter <span style="color: lightgreen;">[a-z]</span>, or number <span style="color: lightgreen;">[0-9]</span>.
+
 ### Flags
+
+Flags are used to modify the behavior of a regex. Here is a list of some flags:
+
+g – Global, match more than once
+
+m – Force $ and ^ to match each newline individually
+
+i – Make the regex case insensitive
+
+There is no flags used in the regex above, meaning it uses the default behavior.
 
 ### Grouping and Capturing
 
