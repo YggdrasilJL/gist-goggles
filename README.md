@@ -1,11 +1,14 @@
 # Regex Tutorial by YggdrasilJL
 
-In this tutorial, you will learn more about how to utilize regular expressions in your code!
+In this tutorial, you will learn more about how the components of regular expressions work.
+
+<a id="regex"></a>
 
 For example, here is a regular expression to validate a password:
 
 ```js
-const emailRegex = /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=~`|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/
+const passwordRegex =
+  /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=~`|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/;
 ```
 
 That regex checks for a complex password with at least 8 characters, at least 1 number, at least 1 uppercase letter, at least 1 lowercase letter, and at least 1 special character.
@@ -32,7 +35,36 @@ Regular expressions are used in many applications, commonly in web development f
 
 ### Anchors
 
+Anchors are used to match the beginning or end of a string. The most common anchors are ^ and $.
+
+This is not necessary in the regex [above](#regex) because its designed to check if a string meets specific criteria so it doesn't need to be interested in where the string starts or ends.
+
 ### Quantifiers
+
+Regex quantifiers are used to check how many times you should match a character or group. 
+
+Here is a list of quantifiers:
+
+    * (Asterisk)
+
+> Matches zero or more occurrences.
+
+    + (Plus):
+    
+> Matches one or more occurrences.
+
+    ? (Question Mark)
+
+> Matches zero or one occurrence.
+
+    {n}:
+
+> Matches exactly n occurrences.
+
+    {n, m}:
+
+> Matches between n and m occurrences.
+
 
 ### OR Operator
 
