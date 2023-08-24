@@ -34,13 +34,17 @@ Regular expressions are used in many applications, commonly in web development f
 ## More Practical Examples
 
 ### Phone Number Format
+
 ---
+
 ```js
 const phoneNumberRegex = /^(\d{3})-(\d{3})-(\d{4})$/;
 ```
 
 ### Email Format
+
 ---
+
 ```js
 const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 ```
@@ -48,8 +52,11 @@ const emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 ## Regex Components
 
 ### Anchors
+
 ---
+
 Anchors are used to match the beginning or end of a string. The most common anchors are ^ and $.
+
 ```js
 // Match a string that starts with 'Hello'
 const startsWithHello = /^Hello/;
@@ -57,10 +64,13 @@ const startsWithHello = /^Hello/;
 // Match a string that ends with 'World'
 const endsWithWorld = /World$/;
 ```
+
 This is not necessary in the regex [above](#regex) because its designed to check if a string meets specific criteria so it doesn't need to be interested in where the string starts or ends.
 
 ### Quantifiers
+
 ---
+
 Regex quantifiers are used to check how many times you should match a character or group.
 
 Here is a list of quantifiers:
@@ -86,7 +96,9 @@ Here is a list of quantifiers:
 > Matches between n and m occurrences, {8,} is used in the regex [above](#regex) (matches 8 or more occurrences).
 
 ### OR Operator
+
 ---
+
 The OR operator <span style='color: #cd5c5c;'>**|**</span> is used to check if one of the conditions is met, very similar to the OR operator in JavaScript.
 
 #### For example:
@@ -98,11 +110,15 @@ In the regex [above](#regex), it is used to match special characters, Shown here
 ```
 
 ### Character Classes
+
 ---
+
 Character classes are used to check if a character matches a specific set of characters. In the regex [above](#regex), it is used to matches any uppercase letter <span style='color: lightgreen;'>[A-Z]</span>, lowercase letter <span style='color: lightgreen;'>[a-z]</span>, or number <span style='color: lightgreen;'>[0-9]</span>.
 
 ### Flags
+
 ---
+
 Flags are used to modify the behavior of a regex. Here is a list of some flags:
 
 g – Global, match more than once
@@ -121,15 +137,21 @@ const treeRegex = /tree/gi;
 There is no flags used in the regex [above](#regex), meaning it uses the default behavior.
 
 ### Grouping and Capturing
+
 ---
+
 Parentheses <span style='color: lightgreen;'>(...)</span> are used to group parts of a expression together, seen in the regex [above](#regex).
 
 ### Bracket Expressions
+
 ---
+
 Bracket expressions <span style='color: lightgreen;'>[...]</span> are used to specify a range of characters, seen in the regex [above](#regex).
 
 ### Greedy and Lazy Match
+
 ---
+
 Greedy quantifiers <span style='color: lightgreen;'> (\*, +, {})</span> are used to match as many characters as possible, seen in the regex [above](#regex).
 
 Lazy quantifiers <span style='color: lightgreen;'>(\*?, +?, {n, m}?)</span> are used to match as few characters as possible, there is no example of this used in the regex [above](#regex).
@@ -140,11 +162,12 @@ const greedyMatch = /a.*b/;
 
 // Lazy match: Matches the SHORTEST string that starts with 'a' and ends with 'b'
 const lazyMatch = /a.*?b/;
-
 ```
 
 ### Boundaries
+
 ---
+
 Boundaries <span style='color: lightgreen;'>\b</span> are used to specify where a regex should match,
 
 ```js
@@ -155,17 +178,27 @@ const treesWholeWord = /\btrees\b/;
 there is no example of this used in the regex [above](#regex).
 
 ### Back-references
+
 ---
-Back-references <span style='color: lightgreen;'>(\1, \2, ...)</span> are used to match a specific group,
+
+Back-references <span style='color: lightgreen;'>(\1, \2, ...)</span> allow you to match the same text that was captured earlier, for example:
 
 ```js
+const regexPattern = /(\d{2})-(\d{2})-\1-\2/;
 
+// Outputs false
+const test1 = '82-45-62-44';
+
+// Outputs true
+const test2 = '82-45-82-45';
 ```
 
 there is no example of this used in the regex [above](#regex).
 
 ### Look-ahead and Look-behind
+
 ---
+
 Look-ahead <span style='color: lightgreen;'>(?=)</span> checks if a pattern is ahead the current position, there is no example of this used in the regex [above](#regex).
 
 look-behind <span style='color: lightgreen;'>(?<=)</span> checks if a pattern is behind the current position, in the regex [above](#regex), look-aheads are used to reinforce the specific conditions.
@@ -177,4 +210,3 @@ look-behind <span style='color: lightgreen;'>(?<=)</span> checks if a pattern is
 Hey! Congratulations on finishing this tutorial! You've now learned the essential components of regular expressions, and you're ready to start using them in your own projects.
 
 To see more, check out [My GitHub!](https://github.com/yggdrasiljl)
-
